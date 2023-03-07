@@ -53,7 +53,7 @@ async def handle_docker_event(event):
 
     action = event.get("Action", "")
     if action == "die":
-        message = f"☠️  {message} died"
+        message = f"☠️ {message} died"
     elif action == "start":
         message = f"✅ {message} started"
     elif action == "destroy":
@@ -81,6 +81,7 @@ async def monitor_events():
         while True:
             event = await loop.run_in_executor(executor, events.next)
             await handle_docker_event(event)
+
 
 @ client.event
 async def on_ready():
