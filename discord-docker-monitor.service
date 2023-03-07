@@ -1,0 +1,11 @@
+[Unit]
+Description=Discord Bot to Monitor Docker Containers
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/env python3 /usr/local/bin/discord-docker-monitor.py /etc/discord-docker-monitor/config.yaml
+
+[Install]
+WantedBy=multi-user.target
