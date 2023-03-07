@@ -1,0 +1,6 @@
+channelid: <channelid>
+discord_token: <token>
+containers:
+- list
+- of
+- containers
